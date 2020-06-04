@@ -20,7 +20,7 @@ module.exports = {
       username: req.json.username,
       roomname: req.json.roomname
     };
-    models.messages.create(message, (err, data) =>{
+    models.messages.create(message, (err) =>{
       //getAll should get all the messages from the db, accepts a callback
       if (err) {
         res.status(404).send('route not found');
