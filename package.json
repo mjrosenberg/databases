@@ -22,7 +22,9 @@
     "morgan": "1.9.1",
     "mysql": "2.17.1",
     "request": "2.88.0",
-    "sequelize": "5.21.2"
+    "sequelize": "5.21.2",
+    "jquery": "^3.3.1",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
@@ -30,7 +32,10 @@
     "babel-register": "6.26.0",
     "chai": "4.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
-    "mocha": "6.2.2"
+    "mocha": "6.2.2",
+    "scripts": {
+      "start": "npx live-server"
+    }
   },
   "babel": {
     "presets": [
