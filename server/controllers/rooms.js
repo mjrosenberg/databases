@@ -15,7 +15,7 @@ module.exports = {
     );
   },
   post: function (req, res) {
-    models.rooms.create(req.json.roomname, (err) =>{
+    models.rooms.create(req.body.roomname, (err) =>{
       //getAll should get all the messages from the db, accepts a callback
       if (err) {
         res.status(404).send('route not found');

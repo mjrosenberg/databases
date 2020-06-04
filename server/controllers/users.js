@@ -15,7 +15,7 @@ module.exports = {
     );
   },
   post: function (req, res) {
-    models.users.create(req.json.username, (err) =>{
+    models.users.create(req.body.username, (err) =>{
       //getAll should get all the messages from the db, accepts a callback
       if (err) {
         res.status(404).send('route not found');

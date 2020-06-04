@@ -16,9 +16,9 @@ module.exports = {
   }, // a function which handles a get request for all messages
   post: function (req, res) {
     var message = {
-      content: req.json.message,
-      username: req.json.username,
-      roomname: req.json.roomname
+      content: req.body.message,
+      username: req.body.username,
+      roomname: req.body.roomname
     };
     models.messages.create(message, (err) =>{
       //getAll should get all the messages from the db, accepts a callback
