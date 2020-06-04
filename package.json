@@ -33,9 +33,7 @@
     "chai": "4.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "mocha": "6.2.2",
-    "scripts": {
-      "start": "npx live-server"
-    }
+    "nodemon": "^2.0.4"
   },
   "babel": {
     "presets": [

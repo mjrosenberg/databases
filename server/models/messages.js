@@ -19,7 +19,7 @@ module.exports = {
     //INSERT INTO messages(content,user_id,room_id) VALUES (message.content, message.username, message.roomname);
     db.connect();
     db.connection.query(`INSERT INTO messages(content,user_id,room_id) VALUES (${message.content}, ${message.username}, ${message.roomname})`, (err) => {
-      if(err) {
+      if (err) {
         callback(err);
       } else {
         callback(null);
