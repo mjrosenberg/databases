@@ -3,7 +3,7 @@ var models = require('../models');
 module.exports = {
   get: function (req, res) {
     //models.readAll
-    models.users.getAll((err, data) =>{
+    models.rooms.getAll((err, data) =>{
       //getAll should get all the messages from the db, accepts a callback
       if (err) {
         res.status(404).send('route not found');
@@ -15,7 +15,7 @@ module.exports = {
     );
   },
   post: function (req, res) {
-    models.users.create(req.json.username, (err, data) =>{
+    models.rooms.create(req.json.roomname, (err, data) =>{
       //getAll should get all the messages from the db, accepts a callback
       if (err) {
         res.status(404).send('route not found');

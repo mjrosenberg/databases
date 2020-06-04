@@ -10,13 +10,13 @@ describe('Persistent Node Chat Server', function() {
 
   beforeEach(function(done) {
     dbConnection = mysql.createConnection({
-      user: 'student',
-      password: 'student',
+      user: 'root',
+      password: '',
       database: 'chat'
     });
     dbConnection.connect();
 
-       var tablename = ""; // TODO: fill this out
+    var tablename = 'messages'; // may need to change this to test the other tables
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
@@ -37,11 +37,12 @@ describe('Persistent Node Chat Server', function() {
       // Post a message to the node chat server:
       request({
         method: 'POST',
-        uri: 'http://127.0.0.1:3000/classes/messages',
+        uri: 'http://127.0.0.1:3000/classes/messages', //maybe needs to be url, check that if we get lots of wacky errors
         json: {
           username: 'Valjean',
           message: 'In mercy\'s name, three days is all I need.',
           roomname: 'Hello'
+          //maybe need to make these match our variable names
         }
       }, function () {
         // Now if we look in the database, we should find the
@@ -67,8 +68,9 @@ describe('Persistent Node Chat Server', function() {
 
   it('Should output all messages from the DB', function(done) {
     // Let's insert a message into the db
-       var queryString = "";
-       var queryArgs = [];
+    var queryString = 'INSERT INTO messages(id,content,user_id,room_id)';
+    var queryArgs = [1, 'hello', 2, 1];
+    //idk if this is what they want
     // TODO - The exact query string and query args to use
     // here depend on the schema you design, so I'll leave
     // them up to you. */

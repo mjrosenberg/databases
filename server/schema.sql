@@ -18,8 +18,8 @@ CREATE TABLE messages (
   /* Describe your table here.*/
   id int NOT NULL,
   content varchar(255),
-  user_id int NOT NULL REFERENCES users(id),
-  room_id int NOT NULL REFERENCES rooms(id),
+  user_name varchar(255) NOT NULL REFERENCES users(user_name),
+  room_name varchar(255) NOT NULL REFERENCES rooms(room_name),
   PRIMARY KEY(id)
 );
 
